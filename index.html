@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliana Pandini | Nutricionista Clínica - Emagrecimento e Bariátrica</title>
+    <meta name="description" content="Nutrição com ciência, acolhimento e estratégia. Especialista em emagrecimento, cirurgia bariátrica e performance. Atendimento no Rio de Janeiro e Online.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --green-deep: #18392b;
+            --green-olive: #65755e;
+            --off-white: #f7f5ef;
+            --sand: #e8dfd2;
+            --beige: #ddd2c2;
+            --warm-detail: #b08b57;
+            --white: #ffffff;
+        }
+
+        /* Custom Color Utilities */
+        .bg-green-deep { background-color: var(--green-deep); }
+        .bg-green-olive { background-color: var(--green-olive); }
+        .bg-off-white { background-color: var(--off-white); }
+        .bg-sand { background-color: var(--sand); }
+        .bg-beige { background-color: var(--beige); }
+        .bg-warm { background-color: var(--warm-detail); }
+
+        .text-green-deep { color: var(--green-deep); }
+        .text-green-olive { color: var(--green-olive); }
+        .text-off-white { color: var(--off-white); }
+        .text-warm { color: var(--warm-detail); }
+
+        .border-green-deep { border-color: var(--green-deep); }
+        .border-green-olive { border-color: var(--green-olive); }
+        .border-off-white { border-color: var(--off-white); }
+
+        /* Typography */
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+
+        body {
+            background-color: var(--off-white);
+            color: var(--green-deep);
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .glass-nav {
+            background: rgba(247, 245, 239, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(24, 57, 43, 0.08);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--beige) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(24, 57, 43, 0.1);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--off-white);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--green-olive);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--green-deep);
+        }
+
+        /* Buttons & Interactions */
+        .btn-primary {
+            background-color: var(--green-deep);
+            color: var(--off-white);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: var(--green-olive);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(24, 57, 43, 0.15);
+        }
+
+        .btn-outline {
+            background-color: var(--white);
+            color: var(--green-deep);
+            border: 1px solid rgba(24, 57, 43, 0.1);
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background-color: var(--sand);
+            transform: translateY(-2px);
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--green-olive);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-green-deep rounded-full flex items-center justify-center text-off-white group-hover:bg-green-olive transition-colors">
+                    <span class="font-serif text-xl font-bold">JP</span>
+                </div>
+                <span class="text-xl font-serif font-bold tracking-tight text-green-deep">Juliana Pandini</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="#home" class="nav-link text-sm font-medium">Início</a>
+                <a href="#sobre" class="nav-link text-sm font-medium">Sobre</a>
+                <a href="#atuacao" class="nav-link text-sm font-medium">Atuação</a>
+                <a href="#como-funciona" class="nav-link text-sm font-medium">Como Funciona</a>
+                <a href="#consultorios" class="nav-link text-sm font-medium">Consultórios</a>
+                <a href="#faq" class="nav-link text-sm font-medium">FAQ</a>
+                <a href="https://wa.me/5521969110022?text=Olá, vi seu site e quero agendar uma consulta." target="_blank" class="btn-primary px-6 py-2.5 rounded-full text-sm font-semibold shadow-lg">
+                    Agendar Consulta
+                </a>
+            </nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="lg:hidden text-green-deep p-2">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-off-white border-t border-green-deep/5 shadow-xl">
+            <div class="flex flex-col p-6 gap-4">
+                <a href="#home" class="mobile-link text-lg font-medium">Início</a>
+                <a href="#sobre" class="mobile-link text-lg font-medium">Sobre</a>
+                <a href="#atuacao" class="mobile-link text-lg font-medium">Atuação</a>
+                <a href="#como-funciona" class="mobile-link text-lg font-medium">Como Funciona</a>
+                <a href="#consultorios" class="mobile-link text-lg font-medium">Consultórios</a>
+                <a href="#faq" class="mobile-link text-lg font-medium">FAQ</a>
+                <a href="https://wa.me/5521969110022?text=Olá, vi seu site e quero agendar uma consulta." target="_blank" class="btn-primary px-6 py-3 rounded-xl text-center font-semibold mt-2">
+                    Agendar via WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="pt-32 pb-20 lg:pt-48 lg:pb-32 hero-gradient overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    <div class="w-full lg:w-1/2 space-y-8">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-green-olive/10 text-green-olive rounded-full text-sm font-semibold tracking-wide uppercase" style="background-color: rgba(101, 117, 94, 0.1);">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            Nutrição com Ciência e Acolhimento
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-green-deep leading-[1.1]">
+                            Estratégia para resultados reais e <span class="text-green-olive italic">sustentáveis</span>.
+                        </h1>
+                        <p class="text-lg md:text-xl text-green-deep/80 leading-relaxed max-w-xl">
+                            Emagrecimento, bariátrica, performance e reeducação alimentar com acompanhamento individualizado por quem tem mais de 20 anos de experiência.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                            <a href="https://wa.me/5521969110022?text=Olá, vi seu site e quero agendar uma consulta." target="_blank" class="btn-primary flex items-center justify-center gap-2 px-8 py-4 rounded-full text-lg font-bold shadow-xl group">
+                                Agendar consulta
+                                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <a href="#consultorios" class="btn-outline flex items-center justify-center gap-2 px-8 py-4 rounded-full text-lg font-bold">
+                                Ver consultórios
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-6 pt-8 border-t border-green-deep/5">
+                            <div class="flex -space-x-3">
+                                <img src="https://picsum.photos/seed/user1/100/100" class="w-10 h-10 rounded-full border-2 border-off-white" alt="Paciente" referrerPolicy="no-referrer">
+                                <img src="https://picsum.photos/seed/user2/100/100" class="w-10 h-10 rounded-full border-2 border-off-white" alt="Paciente" referrerPolicy="no-referrer">
+                                <img src="https://picsum.photos/seed/user3/100/100" class="w-10 h-10 rounded-full border-2 border-off-white" alt="Paciente" referrerPolicy="no-referrer">
+                            </div>
+                            <div class="text-sm">
+                                <div class="flex items-center gap-1 text-warm">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <span class="font-bold ml-1">5.0</span>
+                                </div>
+                                <p class="text-green-deep/60">Avaliação máxima dos pacientes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 relative">
+                        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-square">
+                            <img src="public/file_000000002bfc71f583cbf90574f61634.png" onerror="this.src='https://picsum.photos/seed/nutritionist/800/800'" class="w-full h-full object-cover object-top" alt="Juliana Pandini" referrerPolicy="no-referrer">
+                        </div>
+                        <!-- Decorative elements -->
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-green-olive/20 rounded-full blur-3xl" style="background-color: rgba(101, 117, 94, 0.2);"></div>
+                        <div class="absolute -top-6 -right-6 w-48 h-48 bg-warm/10 rounded-full blur-3xl" style="background-color: rgba(176, 139, 87, 0.1);"></div>
+                        <div class="absolute bottom-10 right-10 bg-white/90 backdrop-blur p-4 rounded-2xl shadow-xl z-20 hidden md:block border border-white/20">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-green-olive/20 rounded-xl flex items-center justify-center text-green-olive" style="background-color: rgba(101, 117, 94, 0.2);">
+                                    <i data-lucide="award" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-green-deep/50">Experiência</p>
+                                    <p class="text-lg font-serif font-bold text-green-deep">+20 Anos de Carreira</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pain Points Section -->
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Você sente que está em um ciclo sem fim?</h2>
+                    <p class="text-lg text-green-deep/70">Muitas pessoas enfrentam os mesmos desafios antes de encontrarem o acompanhamento certo.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-3xl bg-off-white border border-green-deep/5 space-y-4">
+                        <div class="w-12 h-12 bg-red-50 text-red-500 rounded-xl flex items-center justify-center">
+                            <i data-lucide="trending-down" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Efeito Sanfona</h3>
+                        <p class="text-green-deep/70 leading-relaxed">Cansada de perder peso e recuperar tudo logo em seguida por causa de dietas restritivas.</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-off-white border border-green-deep/5 space-y-4">
+                        <div class="w-12 h-12 bg-red-50 text-red-500 rounded-xl flex items-center justify-center">
+                            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Insegurança na Bariátrica</h3>
+                        <p class="text-green-deep/70 leading-relaxed">Medo de não se adaptar ao pós-operatório ou de não ter o resultado esperado na cirurgia.</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-off-white border border-green-deep/5 space-y-4">
+                        <div class="w-12 h-12 bg-red-50 text-red-500 rounded-xl flex items-center justify-center">
+                            <i data-lucide="clock" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Rotina Caótica</h3>
+                        <p class="text-green-deep/70 leading-relaxed">Dificuldade em manter uma alimentação saudável com a correria do dia a dia real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transformation Section -->
+        <section class="py-24 bg-green-deep text-off-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="w-full lg:w-1/2 space-y-8">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold leading-tight">A nutrição que você precisa para a vida que você <span class="text-green-olive">deseja</span>.</h2>
+                        <p class="text-lg text-off-white/70 leading-relaxed">
+                            Meu objetivo é te dar autonomia. Sem terrorismo nutricional, com foco em constância e resultados que permanecem.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 bg-green-olive rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="check" class="w-4 h-4 text-green-deep"></i>
+                                </div>
+                                <span class="text-lg">Emagrecer com saúde e sem radicalismos.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 bg-green-olive rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="check" class="w-4 h-4 text-green-deep"></i>
+                                </div>
+                                <span class="text-lg">Segurança total no pré e pós-operatório bariátrico.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 bg-green-olive rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="check" class="w-4 h-4 text-green-deep"></i>
+                                </div>
+                                <span class="text-lg">Estratégia nutricional aplicável ao seu dia a dia.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 bg-green-olive rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="check" class="w-4 h-4 text-green-deep"></i>
+                                </div>
+                                <span class="text-lg">Melhora da performance e relação com a comida.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-full lg:w-1/2 grid grid-cols-2 gap-4">
+                        <div class="space-y-4 mt-8">
+                            <img src="https://picsum.photos/seed/food1/400/500" class="rounded-2xl w-full h-64 object-cover shadow-lg" alt="Alimentação Saudável" referrerPolicy="no-referrer">
+                            <img src="https://picsum.photos/seed/food2/400/300" class="rounded-2xl w-full h-48 object-cover shadow-lg" alt="Alimentação Saudável" referrerPolicy="no-referrer">
+                        </div>
+                        <div class="space-y-4">
+                            <img src="https://picsum.photos/seed/food3/400/300" class="rounded-2xl w-full h-48 object-cover shadow-lg" alt="Alimentação Saudável" referrerPolicy="no-referrer">
+                            <img src="https://picsum.photos/seed/food4/400/500" class="rounded-2xl w-full h-64 object-cover shadow-lg" alt="Alimentação Saudável" referrerPolicy="no-referrer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="atuacao" class="py-24 bg-off-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Como posso te ajudar</h2>
+                    <p class="text-lg text-green-deep/70">Soluções personalizadas para diferentes momentos da sua jornada de saúde.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-8 rounded-3xl border border-green-deep/5 card-hover flex flex-col">
+                        <div class="w-14 h-14 bg-green-olive/10 text-green-olive rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(101, 117, 94, 0.1);">
+                            <i data-lucide="scale" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold mb-4">Emagrecimento</h3>
+                        <p class="text-green-deep/70 mb-8 flex-grow">Foco em perda de gordura com preservação de massa magra e mudança de comportamento.</p>
+                        <a href="https://wa.me/5521969110022?text=Olá, vi no site seu acompanhamento para emagrecimento e quero saber mais." target="_blank" class="text-green-olive font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                            Saiba mais <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-8 rounded-3xl border border-green-deep/5 card-hover flex flex-col">
+                        <div class="w-14 h-14 bg-green-olive/10 text-green-olive rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(101, 117, 94, 0.1);">
+                            <i data-lucide="heart-pulse" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold mb-4">Nutrição Bariátrica</h3>
+                        <p class="text-green-deep/70 mb-8 flex-grow">Acompanhamento especializado para todas as fases: preparo, pós-imediato e longo prazo.</p>
+                        <a href="https://wa.me/5521969110022?text=Olá, vi no site seu atendimento em nutrição bariátrica e quero entender como funciona." target="_blank" class="text-green-olive font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                            Saiba mais <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-8 rounded-3xl border border-green-deep/5 card-hover flex flex-col">
+                        <div class="w-14 h-14 bg-green-olive/10 text-green-olive rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(101, 117, 94, 0.1);">
+                            <i data-lucide="zap" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold mb-4">Performance</h3>
+                        <p class="text-green-deep/70 mb-8 flex-grow">Estratégias para otimizar seus treinos, melhorar a composição corporal e ter mais energia.</p>
+                        <a href="https://wa.me/5521969110022?text=Olá, vi no site seu acompanhamento em performance e quero mais informações." target="_blank" class="text-green-olive font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                            Saiba mais <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-white p-8 rounded-3xl border border-green-deep/5 card-hover flex flex-col">
+                        <div class="w-14 h-14 bg-green-olive/10 text-green-olive rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(101, 117, 94, 0.1);">
+                            <i data-lucide="apple" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold mb-4">Reeducação Alimentar</h3>
+                        <p class="text-green-deep/70 mb-8 flex-grow">Melhore sua relação com a comida e aprenda a comer de tudo com equilíbrio e consciência.</p>
+                        <a href="https://wa.me/5521969110022?text=Olá, vi no site seu acompanhamento em reeducação alimentar e quero saber mais." target="_blank" class="text-green-olive font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                            Saiba mais <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="bg-white p-8 rounded-3xl border border-green-deep/5 card-hover flex flex-col">
+                        <div class="w-14 h-14 bg-green-olive/10 text-green-olive rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(101, 117, 94, 0.1);">
+                            <i data-lucide="video" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold mb-4">Consulta Online</h3>
+                        <p class="text-green-deep/70 mb-8 flex-grow">A mesma qualidade do atendimento presencial no conforto da sua casa, onde quer que você esteja.</p>
+                        <a href="https://wa.me/5521969110022?text=Olá, vi no site sua consulta online e quero agendar." target="_blank" class="text-green-olive font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                            Saiba mais <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="bg-white p-8 rounded-3xl border border-green-deep/5 card-hover flex flex-col">
+                        <div class="w-14 h-14 bg-green-olive/10 text-green-olive rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(101, 117, 94, 0.1);">
+                            <i data-lucide="map-pin" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold mb-4">Atendimento Presencial</h3>
+                        <p class="text-green-deep/70 mb-8 flex-grow">Consultórios modernos e acolhedores no Centro, Botafogo e Tijuca (Rio de Janeiro).</p>
+                        <a href="#consultorios" class="text-green-olive font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                            Ver locais <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works -->
+        <section id="como-funciona" class="relative py-32 overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="public/file_000000009374720e9766ea78f89c2a05.png" class="w-full h-full object-cover" alt="Background Journey" referrerPolicy="no-referrer">
+                <div class="absolute inset-0 bg-gradient-to-r from-green-deep/95 via-green-deep/85 to-green-deep/40 lg:from-green-deep/95 lg:via-green-deep/80 lg:to-green-deep/50"></div>
+                <div class="absolute inset-0 bg-black/50"></div>
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col lg:flex-row gap-16 items-center">
+                    <div class="w-full lg:w-1/2 space-y-12">
+                        <h2 class="text-3xl md:text-5xl font-serif font-bold text-off-white">Sua jornada passo a passo</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-4 p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all group">
+                                <div class="w-12 h-12 rounded-full bg-green-olive text-white flex items-center justify-center font-bold text-xl flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">1</div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2 text-white">Avaliação Individual</h4>
+                                    <p class="text-off-white/90 text-sm leading-relaxed">Análise profunda do seu histórico, exames, rotina e objetivos específicos.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4 p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all group">
+                                <div class="w-12 h-12 rounded-full bg-green-olive text-white flex items-center justify-center font-bold text-xl flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">2</div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2 text-white">Estratégia Personalizada</h4>
+                                    <p class="text-off-white/90 text-sm leading-relaxed">Plano alimentar e orientações práticas desenhadas para a sua realidade.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4 p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all group">
+                                <div class="w-12 h-12 rounded-full bg-green-olive text-white flex items-center justify-center font-bold text-xl flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">3</div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2 text-white">Acompanhamento Contínuo</h4>
+                                    <p class="text-off-white/90 text-sm leading-relaxed">Ajustes constantes conforme sua evolução e suporte para manter a constância.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4 p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all group">
+                                <div class="w-12 h-12 rounded-full bg-green-olive text-white flex items-center justify-center font-bold text-xl flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">4</div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2 text-white">Resultados Sustentáveis</h4>
+                                    <p class="text-off-white/90 text-sm leading-relaxed">Conquista dos seus objetivos com saúde e autonomia alimentar definitiva.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                        <div class="bg-white/10 backdrop-blur-md p-8 lg:p-12 rounded-3xl border border-white/20 shadow-2xl max-w-md">
+                            <i data-lucide="quote" class="w-10 h-10 text-green-olive mb-6 opacity-50"></i>
+                            <p class="text-off-white font-serif text-2xl lg:text-3xl italic leading-snug">"Meu foco é a sua constância, não a sua perfeição."</p>
+                            <div class="mt-8 flex items-center gap-4">
+                                <div class="w-12 h-1 bg-green-olive rounded-full"></div>
+                                <span class="text-off-white/60 uppercase tracking-widest text-xs font-bold">Juliana Pandini</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="py-24 bg-beige" style="background-color: rgba(221, 210, 194, 0.3);">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
+                    <div class="w-full lg:w-1/2 space-y-8">
+                        <div class="inline-block px-4 py-1 bg-green-olive/10 text-green-olive rounded-full text-sm font-bold uppercase tracking-widest" style="background-color: rgba(101, 117, 94, 0.1);">Sobre Mim</div>
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold leading-tight">Juliana Pandini</h2>
+                        <div class="space-y-6 text-lg text-green-deep/80 leading-relaxed">
+                            <p>
+                                Sou nutricionista clínica com mais de 20 anos de experiência, dedicada a transformar a vida das pessoas através de uma alimentação consciente e baseada em evidências científicas.
+                            </p>
+                            <p>
+                                Meu trabalho é focado em soluções práticas para a vida real. Acredito que a nutrição deve ser acolhedora e individualizada, longe de dietas restritivas ou promessas milagrosas que não se sustentam.
+                            </p>
+                            <p>
+                                Ao longo da minha carreira, especializei-me em emagrecimento, cirurgia bariátrica e performance, ajudando centenas de pacientes a alcançarem sua melhor versão com equilíbrio e saúde.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-8 pt-6">
+                            <div>
+                                <p class="text-3xl font-serif font-bold text-green-olive">+20</p>
+                                <p class="text-sm text-green-deep/60 uppercase font-bold tracking-wider">Anos de Prática</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-serif font-bold text-green-olive">5.0</p>
+                                <p class="text-sm text-green-deep/60 uppercase font-bold tracking-wider">Avaliação Google</p>
+                            </div>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://www.instagram.com/julianapandini/" target="_blank" class="inline-flex items-center gap-2 text-green-deep font-bold hover:text-green-olive transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                                Acompanhe no Instagram
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <div class="relative aspect-[4/5] lg:aspect-[3/4] max-w-md mx-auto lg:mx-0">
+                            <img src="public/file_000000005df471f58be759216c06ae7d.png" onerror="this.src='https://picsum.photos/seed/juliana2/600/800'" class="rounded-3xl shadow-2xl z-10 relative w-full h-full object-cover object-top" alt="Juliana Pandini" referrerPolicy="no-referrer">
+                            <div class="absolute -top-6 -left-6 w-full h-full border-2 border-green-olive/20 rounded-3xl -z-0" style="border-color: rgba(101, 117, 94, 0.2);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clinics Section -->
+        <section id="consultorios" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Onde nos encontramos</h2>
+                    <p class="text-lg text-green-deep/70">Escolha a unidade mais próxima de você ou opte pelo atendimento online.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Centro -->
+                    <div class="bg-off-white rounded-3xl overflow-hidden border border-green-deep/5 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="Theatro-Municipal-Outside-What-to-Do-in-Rio-When-It-rains-600x400-1.jpg" onerror="this.src='https://picsum.photos/seed/centro/400/300'" class="w-full h-full object-cover object-center" alt="Consultório Centro" referrerPolicy="no-referrer">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold mb-2">Centro</h3>
+                            <p class="text-sm text-green-deep/70 mb-4">R. Sete de Setembro, 92 - Salas 1105 e 1106 - Rio de Janeiro - RJ</p>
+                            <a href="https://wa.me/5521969110022?text=Olá, vi seu site e quero agendar atendimento no consultório do Centro." target="_blank" class="mt-auto btn-primary text-center py-3 rounded-xl font-bold">
+                                Agendar no Centro
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Botafogo -->
+                    <div class="bg-off-white rounded-3xl overflow-hidden border border-green-deep/5 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="public/download.jpeg" onerror="this.src='https://picsum.photos/seed/botafogo/400/300'" class="w-full h-full object-cover" alt="Consultório Botafogo" referrerPolicy="no-referrer">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold mb-2">Botafogo</h3>
+                            <p class="text-sm text-green-deep/70 mb-4">Unidade de atendimento moderna e de fácil acesso em Botafogo.</p>
+                            <a href="https://wa.me/5521969110022?text=Olá, vi seu site e quero agendar atendimento no consultório de Botafogo." target="_blank" class="mt-auto btn-primary text-center py-3 rounded-xl font-bold">
+                                Agendar em Botafogo
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Tijuca -->
+                    <div class="bg-off-white rounded-3xl overflow-hidden border border-green-deep/5 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="public/download (1).jpeg" onerror="this.src='https://picsum.photos/seed/tijuca/400/300'" class="w-full h-full object-cover" alt="Consultório Tijuca" referrerPolicy="no-referrer">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold mb-2">Tijuca</h3>
+                            <p class="text-sm text-green-deep/70 mb-4">Atendimento acolhedor no coração da Tijuca para sua conveniência.</p>
+                            <a href="https://wa.me/5521969110022?text=Olá, vi seu site e quero agendar atendimento no consultório da Tijuca." target="_blank" class="mt-auto btn-primary text-center py-3 rounded-xl font-bold">
+                                Agendar na Tijuca
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Online -->
+                    <div class="bg-green-deep rounded-3xl overflow-hidden flex flex-col h-full shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="file_000000005df471f58be759216c06ae7d.png" onerror="this.src='https://picsum.photos/seed/online/400/300'" class="w-full h-full object-cover object-top" alt="Consulta Online" referrerPolicy="no-referrer">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col text-off-white">
+                            <h3 class="text-xl font-bold mb-2">Consulta Online</h3>
+                            <p class="text-sm text-off-white/70 mb-4">Atendimento por vídeo para pacientes de todo o Brasil e exterior.</p>
+                            <a href="https://wa.me/5521969110022?text=Olá, vi seu site e quero agendar uma consulta online." target="_blank" class="mt-auto bg-green-olive text-green-deep text-center py-3 rounded-xl font-bold hover:bg-off-white transition-colors">
+                                Agendar Online
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-24 bg-beige" style="background-color: rgba(221, 210, 194, 0.2);">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">O que dizem meus pacientes</h2>
+                    <div class="flex justify-center gap-1 text-warm">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-green-deep/5 italic text-green-deep/80 relative">
+                        <i data-lucide="quote" class="absolute top-4 right-4 w-8 h-8 text-green-olive/10" style="color: rgba(101, 117, 94, 0.1);"></i>
+                        <p class="mb-6">“Hoje sou uma pessoa mais feliz, ativa e consciente das minhas escolhas. O acompanhamento da Juliana mudou minha visão sobre comida.”</p>
+                        <p class="font-bold not-italic text-green-deep">— Maria S.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-green-deep/5 italic text-green-deep/80 relative">
+                        <i data-lucide="quote" class="absolute top-4 right-4 w-8 h-8 text-green-olive/10" style="color: rgba(101, 117, 94, 0.1);"></i>
+                        <p class="mb-6">“Uma consulta acolhedora, sem pressa, com muita atenção e conhecimento técnico. Me senti segura em todo o processo da bariátrica.”</p>
+                        <p class="font-bold not-italic text-green-deep">— Ricardo F.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-green-deep/5 italic text-green-deep/80 relative">
+                        <i data-lucide="quote" class="absolute top-4 right-4 w-8 h-8 text-green-olive/10" style="color: rgba(101, 117, 94, 0.1);"></i>
+                        <p class="mb-6">“Profissional humanizada, sem neuras, torna o processo de emagrecimento leve e possível no dia a dia. Recomendo muito!”</p>
+                        <p class="font-bold not-italic text-green-deep">— Ana Paula L.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Dúvidas Frequentes</h2>
+                    <p class="text-green-deep/70">Tudo o que você precisa saber sobre o atendimento.</p>
+                </div>
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item border border-green-deep/10 rounded-2xl overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-off-white transition-colors">
+                            <span class="text-lg font-bold">O atendimento é online ou presencial?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="pb-6 text-green-deep/70">Ambos! Atendo presencialmente em três unidades no Rio de Janeiro (Centro, Botafogo e Tijuca) e também realizo consultas online via vídeo para pacientes de qualquer lugar do mundo.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="faq-item border border-green-deep/10 rounded-2xl overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-off-white transition-colors">
+                            <span class="text-lg font-bold">Você atende pacientes bariátricos?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="pb-6 text-green-deep/70">Sim, sou especialista em nutrição bariátrica. Acompanho pacientes desde o preparo para a cirurgia até o pós-operatório tardio, garantindo a saúde nutricional e o sucesso do procedimento.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="faq-item border border-green-deep/10 rounded-2xl overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-off-white transition-colors">
+                            <span class="text-lg font-bold">O foco é apenas emagrecimento?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="pb-6 text-green-deep/70">Não. Embora o emagrecimento seja uma demanda comum, também trabalho com performance esportiva, reeducação alimentar, melhora da relação com a comida e saúde clínica geral.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="faq-item border border-green-deep/10 rounded-2xl overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-off-white transition-colors">
+                            <span class="text-lg font-bold">Como funciona o acompanhamento?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="pb-6 text-green-deep/70">O acompanhamento é totalmente individualizado. Na primeira consulta, fazemos uma avaliação completa e traçamos a estratégia. Nas consultas de retorno, avaliamos a evolução e fazemos os ajustes necessários.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 5 -->
+                    <div class="faq-item border border-green-deep/10 rounded-2xl overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-off-white transition-colors">
+                            <span class="text-lg font-bold">Como faço para agendar?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer px-6">
+                            <p class="pb-6 text-green-deep/70">O agendamento é feito de forma simples e rápida pelo WhatsApp (21 96911-0022). Basta clicar em qualquer botão de agendamento aqui no site.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-24 bg-green-deep relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-0 left-0 w-96 h-96 bg-green-olive rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-warm rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+            </div>
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <div class="max-w-3xl mx-auto space-y-8">
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-off-white leading-tight">Pronta para transformar sua saúde com equilíbrio?</h2>
+                    <p class="text-xl text-off-white/70">Agende sua consulta agora e comece sua jornada com quem entende de resultados reais.</p>
+                    <div class="pt-6">
+                        <a href="https://wa.me/5521969110022?text=Olá, vi seu site e quero agendar uma consulta." target="_blank" class="inline-flex items-center gap-3 bg-green-olive text-green-deep px-10 py-5 rounded-full text-xl font-bold hover:bg-off-white transition-all shadow-2xl group">
+                            <i data-lucide="message-circle" class="w-6 h-6"></i>
+                            Falar no WhatsApp
+                        </a>
+                    </div>
+                    <p class="text-off-white/50 text-sm">Resposta rápida em horário comercial</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-off-white pt-20 pb-10 border-t border-green-deep/5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-green-deep rounded-full flex items-center justify-center text-off-white">
+                            <span class="font-serif text-sm font-bold">JP</span>
+                        </div>
+                        <span class="text-lg font-serif font-bold tracking-tight text-green-deep">Juliana Pandini</span>
+                    </div>
+                    <p class="text-green-deep/60 text-sm leading-relaxed">
+                        Nutricionista Clínica com mais de 20 anos de experiência. Ciência, acolhimento e resultados sustentáveis no Rio de Janeiro e Online.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/julianapandini/" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-white/5 border border-green-deep/10 rounded-full text-green-deep hover:bg-green-deep hover:text-off-white transition-all shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                            <span class="text-xs font-bold uppercase tracking-wider">Instagram</span>
+                        </a>
+                        <a href="https://wa.me/5521969110022" target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center text-green-deep hover:bg-green-deep hover:text-off-white transition-all shadow-sm" style="background-color: rgba(24, 57, 43, 0.05);">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-6">Links Rápidos</h4>
+                    <ul class="space-y-4 text-sm text-green-deep/70">
+                        <li><a href="#home" class="nav-link">Início</a></li>
+                        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                        <li><a href="#atuacao" class="nav-link">Áreas de Atuação</a></li>
+                        <li><a href="#consultorios" class="nav-link">Consultórios</a></li>
+                        <li><a href="#faq" class="nav-link">Dúvidas Frequentes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-6">Contatos</h4>
+                    <ul class="space-y-4 text-sm text-green-deep/70">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-green-olive flex-shrink-0"></i>
+                            <a href="tel:21969110022" class="hover:text-green-olive">21 96911-0022</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-green-olive flex-shrink-0"></i>
+                            <span>contato@julianapandini.com.br</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-green-olive flex-shrink-0"></i>
+                            <span>Rio de Janeiro - RJ (Centro, Botafogo, Tijuca)</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-6">Horário de Atendimento</h4>
+                    <ul class="space-y-2 text-sm text-green-deep/70">
+                        <li class="flex justify-between">
+                            <span>Segunda - Sexta</span>
+                            <span class="font-bold">08:00 - 19:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sábado</span>
+                            <span class="font-bold">08:00 - 12:00</span>
+                        </li>
+                        <li class="pt-4 text-xs text-green-deep/40 italic">
+                            * Atendimento apenas com agendamento prévio.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-10 border-t border-green-deep/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-green-deep/40">
+                <p>&copy; 2026 Juliana Pandini. Todos os direitos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:underline">Política de Privacidade</a>
+                    <a href="#" class="hover:underline">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuToggle.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.setAttribute('data-lucide', 'menu');
+            } else {
+                icon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons();
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuToggle.querySelector('i').setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // FAQ Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const toggle = item.querySelector('.faq-toggle');
+            toggle.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth Scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
